@@ -1,0 +1,96 @@
+@keyframes hoverShop {
+    50% {
+      transform: translateY(-10px);
+    }
+}
+
+@keyframes charge {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes reality {
+  25% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px);
+    background-color: blue;
+  }
+  75% {
+    filter: hue-rotate(90deg);
+  }
+}
+
+@keyframes legendaryGlow {
+  from {
+    box-shadow:
+      0 0 10px gold;
+  }
+  to {
+    box-shadow:
+      0 0 40px gold,
+      0 0 80px gold;
+  }
+}
+
+@keyframes flash {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes borderGlow {
+  0% {
+    border: blue;
+    box-shadow: 0 0 20px blue;
+    text-shadow: 0 4px 20px red;
+  }
+  25% {
+    border: purple;
+    box-shadow: 0 0 20px purple;
+    text-shadow: 0 4px 20px red;
+  }
+  50% {
+    border: blueviolet;
+    box-shadow: 0 0 20px blueviolet;
+    text-shadow: 0 4px 20px red;
+  }
+  100% {
+    border: blue;
+    box-shadow: 0 0 20px blue;
+    text-shadow: 0 4px 20px red;
+  }
+} 
+
+@keyframes buy {
+  0%,100%{
+    background-color: rgb(0, 255, 0);
+    color: red;
+    font-size: medium;
+  }
+  50%{
+    background-color: rgb(7, 204, 7);
+    color: red;
+    font-size: larger;
+  }
+}
+
+@keyframes rainbowMove {
+  from {
+      background-position: 0% 0%;
+  }
+  to {
+      background-position: 300% 0%;
+  }
+}

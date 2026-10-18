@@ -1,0 +1,296 @@
+:root {
+    --tr-bg: #000000;
+    --tr-panel: #080808;
+    --tr-panel-light: #111111;
+    --tr-yellow: #eeff00;
+    --tr-bright: #ffff66;
+    --tr-text: #f5f5f5;
+    --tr-muted: #b7bd70;
+    --tr-border: #eeff00;
+    --tr-shadow: rgba(238, 255, 0, 0.45);
+}
+
+
+#transcensionShop button {
+    border: none;
+    background: transparent;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+#transcensionOpen {
+    background: linear-gradient(
+        -135deg,
+        rgb(37, 37, 0),
+        #000
+    );
+    border: 2px solid var(--tr-yellow);
+    border-radius: 4px;
+    padding: 12px 18px;
+    cursor: pointer;
+    box-shadow: 0 0 8px var(--tr-shadow);
+    transition: 0.2s ease;
+    filter: sepia(1) saturate(3) hue-rotate(350deg);
+}
+
+#transcensionOpen:hover {
+    box-shadow:
+        0 0 10px var(--tr-yellow),
+        0 0 30px var(--tr-shadow);
+    transform: scale(1.06);
+}
+
+#trBanner {
+    margin: 0 0 25px;
+    padding: 18px 8px;
+    color: var(--tr-yellow);
+    text-align: center;
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow:
+        0 0 5px var(--tr-yellow),
+        0 0 15px var(--tr-shadow);
+    border-bottom: 2px solid var(--tr-yellow);
+}
+
+#trBanner h5 {
+    margin: 12px 0 0;
+    color: var(--tr-bright);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px var(--tr-shadow);
+}
+
+#trDisplays {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+#trDisplay,
+#trShDisplay {
+    flex: 1 1 220px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 14px;
+    background: #080808;
+    color: var(--tr-yellow);
+    border: 1px solid var(--tr-yellow);
+    text-align: center;
+    font-weight: bold;
+    box-shadow: inset 0 0 10px rgba(238, 255, 0, 0.07);
+}
+
+#trShop {
+    width: 100%;
+    right: calc(-1px * 100%);
+    margin: 24px auto;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    table-layout: fixed;
+    background: #000;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* TABLE HEADER */
+
+#trShop #trHeading th {
+    padding: 16px 10px;
+    background: #eeff00;
+    color: #000;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    border: none;
+}
+
+#trShop #trHeading th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+#trShop #trHeading th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+/* UPGRADE CARDS */
+
+#trShop tbody tr:not(#trHeading) {
+    background: linear-gradient(110deg, #151700, #080808);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#trShop tbody tr:not(#trHeading) td {
+    padding: 16px 12px;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+    border: none;
+}
+
+#trShop tbody tr:not(#trHeading) td:first-child {
+    border-left: 3px solid #eeff00;
+    border-radius: 10px 0 0 10px;
+}
+
+#trShop tbody tr:not(#trHeading) td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: center;
+}
+
+/* HOVER */
+
+#trShop tbody tr:not(#trHeading):hover {
+    background: linear-gradient(110deg, #252900, #101010);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px #eeff0033;
+}
+
+/* UPGRADE NAMES */
+
+#trShop td:first-child {
+    color: #eeff00;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+/* COST */
+
+#trShop td:nth-child(2) {
+    color: #ffff80;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* DESCRIPTION */
+
+#trShop td:nth-child(3) {
+    color: #bdbdbd;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* BUY BUTTONS */
+
+#trShop button {
+    min-width: 66px;
+    padding: 10px 12px;
+
+    border: 1px solid #eeff00;
+    border-radius: 7px;
+
+    background: #080808;
+    color: #eeff00;
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+#trShop button:hover:not(:disabled) {
+    background: #eeff00;
+    color: #000;
+    box-shadow: 0 0 16px #eeff0088;
+    transform: translateY(-2px);
+}
+
+#trShop button:active:not(:disabled) {
+    transform: scale(0.94);
+}
+
+/* BLOCKED ITEM */
+
+#trDsBuyButton,
+#trDsBuyButton:disabled {
+    border-color: #444 !important;
+    background: #111 !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    #trShop {
+        font-size: 12px;
+    }
+
+    #trShop #trHeading th {
+        padding: 10px 4px;
+        font-size: 10px;
+        letter-spacing: 0;
+    }
+
+    #trShop tbody tr:not(#trHeading) td {
+        padding: 10px 5px;
+    }
+
+    #trShop td:first-child {
+        font-size: 11px;
+    }
+
+    #trShop td:nth-child(2),
+    #trShop td:nth-child(3) {
+        font-size: 10px;
+    }
+
+    #trShop button {
+        min-width: 0;
+        padding: 8px 5px;
+        font-size: 10px;
+    }
+}
+
+/* TRANSCENDENCE OPEN BUTTON */
+#transcensionOpen {
+    position: fixed;
+    top: 350px;
+    right: 10px;
+    z-index: 100;
+}
+
+
+#transcensionShop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    z-index: 200;
+
+    box-sizing: border-box;
+    width: min(800px, calc(100vw - 24px));
+    height: min(90vh, 900px);
+    height: min(90dvh, 900px);
+    overflow-y: auto;
+
+    transform: translate(150%, -50%);
+
+    transition:
+        transform 0.5s cubic-bezier(.2, .8, .2, 1);
+    background: #000;
+}
+
+#transcensionShop.open {
+    transform: translate(-50%, -50%);
+}
+
+#transcensionShop h5 {
+    text-align: center;
+    color: var(--tr-text);
+    text-shadow: 0 0 20px var(--tr-bright),
+                 0 0 25px var(--tr-yellow);
+}

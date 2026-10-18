@@ -1,0 +1,113 @@
+#shopPanel {
+	position: fixed;
+	top: 0;
+	right: -350px;
+	width: 300px;
+	height: 100%;
+	background: repeating-linear-gradient(red,
+			rgb(170, 2, 2));
+	transition: right 0.5s;
+	animation: hoverShop 4s infinite ease-in-out;
+	z-index: 200;
+}
+
+#shopBnner {
+    margin: 0;
+    padding: 12px;
+
+    background: linear-gradient(
+        to bottom,
+        #6699ff 0%,
+        #2255cc 45%,
+        #003399 50%,
+        #001966 100%
+    );
+
+    color: #ffffff;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 4px;
+
+    border: 3px outset #99bbff;
+    border-bottom: 4px solid #cc0000;
+
+    text-shadow:
+        2px 2px 0 #001144,
+        0 0 5px #6699ff;
+
+    box-shadow:
+        inset 0 2px 0 #ccddff,
+        0 3px 0 #660000;
+}
+
+.openshop {
+	position: fixed;
+	top: 10px;
+	right: 64px;
+	border: rgb(0, 0, 0);
+}
+
+.shopButton {
+	width: 300px;
+	background: radial-gradient(blue,
+			rgb(08, 08, 202));
+	box-shadow: 0 0 20px black;
+	color: rgb(252, 235, 81);
+	border: rgb(0, 0, 0);
+	animation: borderGlow 3s infinite ease-in-out;
+}
+
+.shopButton2 {
+	width: 300px;
+	background: radial-gradient(rgb(184, 184, 20),
+			yellow);
+	color: rgb(0, 0, 0);
+	box-shadow: 0 0 20px purple;
+	border: rgb(0, 0, 0);
+}
+
+.shopButton3 {
+	width: 300px;
+	background-color: rgb(61, 233, 56);
+	color: rgb(255, 30, 30);
+	box-shadow: 0 0 20px purple;
+	border: rgb(0, 0, 0);
+	animation: buy 1s infinite ease-in-out;
+}
+
+.shopButton4 {
+	width: 300px;
+	background-color: rgb(61, 233, 56);
+	color: rgb(255, 30, 30);
+	box-shadow: 0 0 20px purple;
+	border: rgb(0, 0, 0);
+}
+
+#closeButton {
+	display: flex;
+	justify-content: right;
+	padding: 10px;
+}
+
+#shopClose {
+	border: none;
+	background: none;
+	width: 32px;
+	height: 26px;
+}
+
+#shopOpen {
+	border: none;
+	background: none;
+	width: 64px;
+	height: 64px;
+}
+
+#shopMain {
+	border: none;
+	background: none;
+	width: 177px;
+	height: 41px;
+}
