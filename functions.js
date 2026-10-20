@@ -1,6 +1,6 @@
 function upd(){
     document.getElementById("asDisplay").textContent = "--[ Ascensions: " + ascensions + " --]";
-    document.getElementById("asCdisplay").textContent = "--[ Ascension Coins: " + ascensionShards + " --]";
+    document.getElementById("asCdisplay").textContent = "--[ Ascension Shards: " + ascensionShards + " --]";
     document.getElementById("score").textContent = "--[score: " + score + "]--";
     document.getElementById("trShDisplay").textContent = "[ Transcendence Crystals: " + transcendenceCrystals + " ]";
 }
@@ -59,16 +59,13 @@ function addLuck() {
 
 function ascend() {
     if (score >= 1000000000000) {
-        score = 0;
         numBonus = 1;
         addBonus = 1;
-        level = 1;
-        updScore();
-        ascended = true;
         ascensions += 1;
         ascensionShards += ascensionShardBoost;
-        document.getElementById("asDisplay").textContent = "--[Ascensions: " + ascensions + "]--"
-        document.getElementById("asCdisplay").textContent = "--[Ascension coins: " + ascensionShards + "]--"
+        document.getElementById("imagee").src = "nickel.png";
+        maxScore = 0;
+        score = 0;
         closeAsShop();
         updateMysteryUpgrade();
         upd();
@@ -100,7 +97,7 @@ function upgLuck() {
 function transcend() {
     if (ascensionShards >= 10){
         ascensionShards -= 10;
-        let CrystalChance = Math.floor(Math.random() * maxCrystals) + 1;
+        let CrystalChance = Math.floor(Math.random() * maxCrystals) + 1 + garunteedCrystals;
         transcendenceCrystals += CrystalChance;
         document.getElementById("transcensionOpen").hidden = false;
         document.getElementById("transcensionShop").hidden = false;
@@ -113,12 +110,27 @@ const mysteryButton = mysteryUpgrade.querySelector(".upgradeBuy");
 
 function updateMysteryUpgrade() {
     const unlocked = ascensions >= 15;
-
-    mysteryUpgrade.classList.toggle("unlocked", unlocked);
     mysteryButton.disabled = !unlocked;
     mysteryButton.textContent = unlocked ? "BUY" : "LOCKED";
-    document.querySelector(".mysteryUpgrade .upgradeName").textContent = "TRANSCENDENCE COINS";
-    document.querySelector(".mysteryUpgrade .upgradeCost").textContent = "10 Ascension Coins";
-    document.querySelector(".mysteryUpgrade .upgradeDesc").textContent = "Thou shall TRANSCEND beyond the sky.\nconverts 10ascension coins to transcension coins  ";
-    document.querySelector(".mysteryUpgrade .upgradeBuy").onclick = transcend;
+    if (unlocked){
+        mysteryUpgrade.classList.toggle("unlocked", unlocked);
+        document.querySelector(".mysteryUpgrade .upgradeName").textContent = "TRANSCENDENCE CRYSTAL";
+        document.querySelector(".mysteryUpgrade .upgradeCost").textContent = "10 Ascension Shards";
+        document.querySelector(".mysteryUpgrade .upgradeDesc").textContent = "Thou shall TRANSCEND beyond the sky.\nconverts 10 Ascension Shard to Transcension Crystals";
+        document.querySelector(".mysteryUpgrade .upgradeBuy").onclick = transcend;
+    }
+}
+
+let trBoostsBought = 0;
+function buytrBoost(){
+    if (transcendenceCrystals >= 20) {
+        transcendenceCrystals -= 20;
+        garunteedCrystals++;
+        maxCrystals++;
+        trBoostsBought++;
+        if (trBoostsBought%2 === 0){
+            maxCrystals++;
+        }
+        upd();
+    }
 }

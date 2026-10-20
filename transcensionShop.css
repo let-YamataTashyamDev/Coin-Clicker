@@ -88,7 +88,6 @@
 
 #trShop {
     width: 100%;
-    right: calc(-1px * 100%);
     margin: 24px auto;
     border-collapse: separate;
     border-spacing: 0 10px;
@@ -142,6 +141,24 @@
     border-radius: 10px 0 0 10px;
 }
 
+#transcensionShop #trShop tbody #trevent #treNamee {
+    border-left: 3px solid #ec39e3;
+    border-radius: 10px 0 0 10px;
+}
+
+#transcensionShop #trShop tbody #trevent #treCost{
+    color: #e990e9;
+}
+#transcensionShop #trShop tbody #trevent {
+    background: linear-gradient(110deg, rgb(17, 0, 24), #080808);
+}
+
+#transcensionShop #trShop tbody #trevent #treBuy button {
+    border-color:rgb(214, 8, 241);
+    color: rgb(214, 8, 241);
+    border-radius: 10px 10px 10px 10px;
+}
+
 #trShop tbody tr:not(#trHeading) td:last-child {
     border-radius: 0 10px 10px 0;
     text-align: center;
@@ -157,10 +174,14 @@
 
 /* UPGRADE NAMES */
 
-#trShop td:first-child {
+#trShop td:first-child:not(#treName) {
     color: #eeff00;
     font-size: 14px;
     font-weight: 900;
+}
+
+#trShop td:first-child #treName {
+    color: #ee00ee;
 }
 
 /* COST */
@@ -293,4 +314,10 @@
     color: var(--tr-text);
     text-shadow: 0 0 20px var(--tr-bright),
                  0 0 25px var(--tr-yellow);
+}
+
+#transcensionShop #treDefi h5 , #transcensionShop #treDefi{
+    text-align: center;
+    color: var(--tr-text);
+    text-shadow: none;
 }

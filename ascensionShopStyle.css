@@ -7,7 +7,6 @@
     --as-text: #fff4d0;
 }
 
-/* SHOP OPEN BUTTON */
 #asShopOpen {
     position: fixed;
     top: 168px;
@@ -35,7 +34,7 @@
     transform: translateX(-4px);
 }
 
-/* ASCENDENCE SHOP PANEL */
+
 #ascendShop {
     position: fixed;
     top: 0;
@@ -83,7 +82,6 @@
     text-shadow: 0 0 12px #ff3333;
 }
 
-/* SHOP TEXT */
 .asc {
     text-align: center;
     color: var(--as-text);

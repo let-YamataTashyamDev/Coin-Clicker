@@ -5,14 +5,18 @@
             <title>CLICKER GAME | By YMTP </title>
             <meta name="description" content="a clicker game where you click!">
             <link rel="icon" href="coin1.png">
+            <link rel="stylesheet" href="animations.css">
+            <link rel="stylesheet" href="shop.css">
+            <link rel="stylesheet" href="displays.css">
+            <link rel="stylesheet" href="ascensionShopStyle.css">
+            <link rel="stylesheet" href="transcensionShop.css">
+            <script>
+                alert("Press \"e\" or click the coin!" + 
+                     "\nPress \"a\" to open and \"s\" to close the shop" +
+                     "\nPress \"w\" to open and \"d\" to close the ascension menu!" +
+                     "\n\nHave fun!!")
+            </script>
         </head>
-
-        <link rel="stylesheet" href="animations.css">
-        <link rel="stylesheet" href="shop.css">
-        <link rel="stylesheet" href="displays.css">
-        <link rel="stylesheet" href="ascensionShopStyle.css">
-        <link rel="stylesheet" href="transcensionShop.css">
-
         <body>
             <header>
                 <button id="score" class="display">
@@ -105,6 +109,8 @@
                 </div>
             </div>
 
+            <!--  ASCENSION SHOPPPPPP  -->
+
             <div class="openShop">
                 <button id="asShopOpen" onclick="openAsShop()">
                     <img src="ascensionShop.png" alt="ascension shop">
@@ -122,7 +128,7 @@
                     </button>
                     <br>
                     <button id="asCdisplay">
-                        --[Ascension coins]--
+                        --[Ascension Shards]--
                     </button>
                 </div>
 
@@ -223,11 +229,11 @@
                 </h2>
             </div>
 
-            <button id="transcensionOpen" onclick="openTr()"  style="border: none;" hidden>
+            <button id="transcensionOpen" onclick="openTr()"  style="border: none;">
                 <img src="ascensionShop.png" alt="Transcend">
             </button>
 
-            <div id="transcensionShop" hidden>
+            <div id="transcensionShop" >
                 <button id="closeTr" onclick="closeTr()"> ✕ </button>
                 <p id="trBanner">
                     TRANSCENDENCE SHOP
@@ -261,6 +267,13 @@
                             <td id="trbDefi"> get 2 more Crystal each Transcendence</td>
                             <td id="trbBuy"><button id="trboostBuyButton" onclick="buytrBoost()"> BUY </button></td>
                         </tr>
+                        <tr id="trevent">
+                            <td id="treNamee"> <span id="treName">Transcendence Crystal Rain Event </span></td>
+                            <td id="treCost"> 200 Transcendence Crystals</td>
+                            <td id="treDefi"> Unlock the Transcendence Rain Event! <h5> gives 1 Transcendence Crystal + Ascension Shards per click </h5>
+                            </td>
+                            <td id="treBuy"><button id="trEventBoostButton" onclick="buytrBoost()"> BUY </button></td>
+                        </tr>
                         <tr id="trDs">
                             <td id="trDsName"> unlock ??? </td>
                             <td id="trDsCost"> ??? ascendence shards<br>
@@ -273,9 +286,10 @@
                 </table>
             </div>
 
-            <script src="functions.js"></script>
-            <script src="main.js"> </script>
-            <script src="shopBuy.js"> </script>
+            <script src="functions.js" defer></script>
+            <script src="main.js" defer> </script>
+            <script src="shopBuy.js" defer> </script>
+            <script src="keyBoard Shortcuts.js" defer></script> 
             <script>
                 class Level {
                     constructor(minNum, minAdd, badNum, badAdd, midNum, midAdd, bestNum, bestAdd) {
