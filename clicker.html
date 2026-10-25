@@ -1,346 +1,358 @@
 ﻿<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>CLICKER GAME | By YMTP </title>
-            <meta name="description" content="a clicker game where you click!">
-            <link rel="icon" href="coin1.png">
-            <link rel="stylesheet" href="animations.css">
-            <link rel="stylesheet" href="shop.css">
-            <link rel="stylesheet" href="displays.css">
-            <link rel="stylesheet" href="ascensionShopStyle.css">
-            <link rel="stylesheet" href="transcensionShop.css">
-            <script>
-                alert("Press \"e\" or click the coin!" + 
-                     "\nPress \"a\" to open and \"s\" to close the shop" +
-                     "\nPress \"w\" to open and \"d\" to close the ascension menu!" +
-                     "\n\nHave fun!!")
-            </script>
-        </head>
-        <body>
-            <header>
-                <button id="score" class="display">
-                    --[ score: 0 ]--
-                </button>
-                    <br>
-                <button id="display2" class="display">
-                    --[Max luck meters rolled: 0]--
-                </button>
-            </header>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>CLICKER GAME | By YMTP </title>
+			<meta name="description" content="a clicker game where you click!">
+			<link rel="icon" href="coin1.png">
+			<link rel="stylesheet" href="animations.css">
+			<link rel="stylesheet" href="shop.css">
+			<link rel="stylesheet" href="displays.css">
+			<link rel="stylesheet" href="ascensionShopStyle.css">
+			<link rel="stylesheet" href="transcensionShop.css">
+		</head>
+		<body>
+			<header>
+				<button id="score" class="display" onclick="callOut()">
+					--[ score: 0 ]--
+				</button>
+					<br>
+				<button id="display2" class="display">
+					--[Max luck meters rolled: 0]--
+				</button>
+			</header>
 
-            <div class="clickerContainer">
-                <button id="clickerSprite" onclick="addPoints()">
-                    <img src="nickel.png" id="imagee" width="128" height="128">
-                </button>
-            </div>
+			<div class="clickerContainer">
+				<button id="clickerSprite" onclick="addPoints()" draggable="true">
+					<img src="nickel.png" id="imagee" width="128" height="128">
+				</button>
+			</div>
 
-            <div id="displays">
-                <button id="add-display" onclick="addScore()" class="display">
-                    +0
-                    <!--score increment display-->
-                </button>
-                <br>
-                <button id="meterDisplay" onclick="addLuck()" class="display">
-                    luck meter:
-                    <!--luck display-->
-                </button>
-            </div>
+			<div id="displays">
+				<button id="add-display" onclick="addScore()" class="display">
+					+0
+					<!--score increment display-->
+				</button>
+				<br>
+				<button id="meterDisplay" onclick="addLuck()" class="display">
+					luck meter:
+					<!--luck display-->
+				</button>
+			</div>
 
-            <div class="openshop">
-                <button id="shopOpen" onclick="openShop()">
-                    <img src="shopIcon.png" alt="shop">
-                </button>
-            </div>
+			<div class="openshop">
+				<button id="shopOpen" onclick="openShop()">
+					<img src="shopIcon.png" alt="shop">
+				</button>
+			</div>
 
-            <div id="shopPanel">
-                <div id="closeButton">
-                    <button id="shopClose" onclick="closeShop()">
-                        <img src="close.png">
-                    </button>
-                </div>
+			<div id="shopPanel">
+				<div id="closeButton">
+					<button id="shopClose" onclick="closeShop()">
+						<img src="close.png">
+					</button>
+				</div>
 
-                <p id="shopBnner">
-                    SHOP
-                </p>
+				<p id="shopBnner">
+					SHOP
+				</p>
 
-                <div id="cpl1">
-                    <p class="shopButton">
-                        Click power level 1
-                    </p>
-                    <button onclick="upgrades[0].buyOne()" class="shopButton2">
-                        BUY 1 ($1000)
-                    </button>
-                    <button onclick="upgrades[0].buyTen()" class="shopButton3">
-                        BUY 10 (10% discount)
-                    </button>
-                    <button onclick="upgrades[0].buyMax()" class="shopButton4">
-                        MAX BUY (10% discount)
-                    </button>
-                </div>
+				<div id="cpl1">
+					<p class="shopButton">
+						Click power level 1
+					</p>
+					<button onclick="upgrades[0].buyOne()" class="shopButton2">
+						BUY 1 ($1000)
+					</button>
+					<button onclick="upgrades[0].buyTen()" class="shopButton3">
+						BUY 10 (10% discount)
+					</button>
+					<button onclick="upgrades[0].buyMax()" class="shopButton4">
+						MAX BUY (10% discount)
+					</button>
+				</div>
 
-                <div id="cpl2">
-                    <p class="shopButton">
-                        Click power level 2
-                    </p>
-                    <button onclick="upgrades[1].buyOne()" class="shopButton2">
-                        BUY ($10000)
-                    </button>
-                    <button onclick="upgrades[1].buyTen()" class="shopButton3">
-                        BUY 10 (10% discount)
-                    </button>
-                    <button onclick="upgrades[1].buyMax()" class="shopButton4">
-                        MAX BUY (10% discount)
-                    </button>
-                </div>
+				<div id="cpl2">
+					<p class="shopButton">
+						Click power level 2
+					</p>
+					<button onclick="upgrades[1].buyOne()" class="shopButton2">
+						BUY ($10000)
+					</button>
+					<button onclick="upgrades[1].buyTen()" class="shopButton3">
+						BUY 10 (10% discount)
+					</button>
+					<button onclick="upgrades[1].buyMax()" class="shopButton4">
+						MAX BUY (10% discount)
+					</button>
+				</div>
 
-                <div id="cpl3">
-                    <p class="shopButton">
-                        Click power level 3
-                    </p>
-                    <button onclick="upgrades[2].buyOne()" class="shopButton2">
-                        BUY ($1000000)
-                    </button>
-                    <button onclick="upgrades[2].buyTen()" class="shopButton3">
-                        BUY 10 (10% discount)
-                    </button>
-                    <button onclick="upgrades[2].buyMax()" class="shopButton4">
-                        MAX BUY (10% discount)
-                    </button>
-                </div>
-            </div>
+				<div id="cpl3">
+					<p class="shopButton">
+						Click power level 3
+					</p>
+					<button onclick="upgrades[2].buyOne()" class="shopButton2">
+						BUY ($1000000)
+					</button>
+					<button onclick="upgrades[2].buyTen()" class="shopButton3">
+						BUY 10 (10% discount)
+					</button>
+					<button onclick="upgrades[2].buyMax()" class="shopButton4">
+						MAX BUY (10% discount)
+					</button>
+				</div>
+			</div>
 
-            <!--  ASCENSION SHOPPPPPP  -->
+			<!--  ASCENSION SHOPPPPPP  -->
 
-            <div class="openShop">
-                <button id="asShopOpen" onclick="openAsShop()">
-                    <img src="ascensionShop.png" alt="ascension shop">
-                </button>
-            </div>
+			<div class="openShop">
+				<button id="asShopOpen" onclick="openAsShop()">
+					<img src="ascensionShop.png" alt="ascension shop">
+				</button>
+			</div>
 
-            <div id="ascendShop" class="asc">
-                <button id="closeAsc" onclick="closeAsShop()">
-                    <img src="asClose.png" alt="close">
-                </button>
+			<!-- This is like the shop panel -->
+			<!--f(x) = 4i(xi + 4xi)-->
+			<!-- sqrt(i) = (-1) -->
+			<div id="ascendShop" class="asc">
+				<button id="closeAsc" onclick="closeAsShop()">
+					<img src="asClose.png" alt="close">
+				</button>
 
-                <div id="asDisplays">
-                    <button id="asDisplay">
-                        --[Ascensions]--
-                    </button>
-                    <br>
-                    <button id="asCdisplay">
-                        --[Ascension Shards]--
-                    </button>
-                </div>
+				<div id="asDisplays">
+					<button id="asDisplay">
+						--[Ascensions]--
+					</button>
+					<br>
+					<button id="asCdisplay">
+						--[Ascension Shards]--
+					</button>
+				</div>
 
-                <img src="ascensionShopBanner.png" alt="ASCENSION">
+				<img src="ascensionShopBanner.png" alt="ASCENSION">
 
-                <div id="nextAscension">
-                    Next Ascension in...
-                </div>
+				<div id="nextAscension">
+					Next Ascension in...
+				</div>
 
-                <button id="goal">
-                    ???
-                </button>
+				<p id="goal">
+					???
+				</p>
 
-                <div id="ascendButton">
-                    <button id="ascend" onclick="ascend()">
-                        ASCEND
-                    </button>
-                </div>
+				<div id="ascendButton">
+					<button id="ascend" onclick="ascend()">
+						ASCEND
+					</button>
+				</div>
 
-                <hr width="100%" height="40px" color="purple">
-                <h1 style="font-family: 'Courier New', Courier, monospace; font-weight: bold;" id="asBnner">
-                    ASCENSION SHOP
-                </h1>
-                    <table id="ascensionUpgrades">
-                        <thead>
-                            <tr>
-                                <th>UPGRADE</th>
-                                <th>COST</th>
-                                <th>BUY</th>
-                            </tr>
-                        </thead>
+				<hr width="100%" height="40" color="purple">
+				<h1 style="font-family: 'Courier New', Courier, monospace; font-weight: bold;" id="asBnner">
+					ASCENSION SHOP
+				</h1>
+					<table id="ascensionUpgrades">
+						<thead>
+							<tr>
+								<th>UPGRADE</th>
+								<th>COST</th>
+								<th>BUY</th>
+							</tr>
+						</thead>
 
-                        <tbody>
-                            <tr>
-                                <td class="upgradeName">Luck Boost</td>
-                                <td>
-                                    <span class="upgradeCost">3 Ascension Shards</span>
-                                    <p class="upgradeDesc">
-                                        What powers may this boost hold?...
-                                        I dunno, maybe luck?
-                                    </p>
-                                </td>
-                                <td>
-                                    <button class="upgradeBuy" onclick="upgLuck()">BUY</button>
-                                </td>
-                            </tr>
+						<tbody>
+							<tr>
+								<td class="upgradeName">Luck Boost</td>
+								<td>
+									<span class="upgradeCost">3 Ascension Shards</span>
+									<p class="upgradeDesc">
+										What powers may this boost hold?...
+										I dunno, maybe luck?
+									</p>
+								</td>
+								<td>
+									<button class="upgradeBuy" onclick="upgLuck()">BUY</button>
+								</td>
+							</tr>
 
-                            <tr>
-                                <td class="upgradeName">Ascension Shard Boost</td>
-                                <td>
-                                    <span class="upgradeCost">3 Ascension Shards</span>
-                                    <p class="upgradeDesc">Get more Shards when you ascend.</p>
-                                </td>
-                                <td>
-                                    <button class="upgradeBuy" onclick="upgAsC()">BUY</button>
-                                </td>
-                            </tr>
+							<tr>
+								<td class="upgradeName">Ascension Shard Boost</td>
+								<td>
+									<span class="upgradeCost">3 Ascension Shards</span>
+									<p class="upgradeDesc">Get more Shards when you ascend.</p>
+								</td>
+								<td>
+									<button class="upgradeBuy" onclick="upgAsC()">BUY</button>
+								</td>
+							</tr>
 
-                            <tr class="idleUpgrade">
-                                <td class="upgradeName">IDLE SCORE</td>
-                                <td>
-                                    <span class="upgradeCost">5 Ascension Shards</span>
-                                    <p class="upgradeDesc">
-                                        Gain points while you're not clicking!
-                                    </p>
-                                </td>
-                                <td>
-                                    <button class="upgradeBuy" onclick="addIdle()">BUY</button>
-                                </td>
-                            </tr>
+							<tr class="idleUpgrade">
+								<td class="upgradeName">IDLE SCORE</td>
+								<td>
+									<span class="upgradeCost">5 Ascension Shards</span>
+									<p class="upgradeDesc">
+										Gain points while you're not clicking!
+									</p>
+								</td>
+								<td>
+									<button class="upgradeBuy" onclick="addIdle()">BUY</button>
+								</td>
+							</tr>
 
-                            <tr class="idleBoostUpgrade">
-                                <td class="upgradeName">IDLE BOOST</td>
-                                <td>
-                                    <span class="upgradeCost">7 Ascension Shards</span>
-                                    <p class="upgradeDesc">Upgrade your idle score!</p>
-                                </td>
-                                <td>
-                                    <button class="upgradeBuy" onclick="upgIdle()">BUY</button>
-                                </td>
-                            </tr>
+							<tr class="idleBoostUpgrade">
+								<td class="upgradeName">IDLE BOOST</td>
+								<td>
+									<span class="upgradeCost">7 Ascension Shards</span>
+									<p class="upgradeDesc">Upgrade your idle score!</p>
+								</td>
+								<td>
+									<button class="upgradeBuy" onclick="upgIdle()">BUY</button>
+								</td>
+							</tr>
 
-                            <tr class="mysteryUpgrade">
-                                <td class="upgradeName">??? CRYSTALS</td>
-                                <td>
-                                    <span class="upgradeCost">??? Ascension Shards</span>
-                                    <p class="upgradeDesc">
-                                        What currency comes next?
-                                        Unlocks at Ascension 15.
-                                    </p>
-                                </td>
-                                <td>
-                                    <button class="upgradeBuy" disabled>LOCKED</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </h2>
-            </div>
+							<tr class="mysteryUpgrade">
+								<td class="upgradeName">??? CRYSTALS</td>
+								<td>
+									<span class="upgradeCost">??? Ascension Shards</span>
+									<p class="upgradeDesc">
+										What currency comes next?
+										Unlocks at Ascension 15.
+									</p>
+								</td>
+								<td>
+									<button class="upgradeBuy" disabled>LOCKED</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</h2>
+			</div>
 
-            <button id="transcensionOpen" onclick="openTr()"  style="border: none;">
-                <img src="ascensionShop.png" alt="Transcend">
-            </button>
+			<button id="transcensionOpen" onclick="openTr()"  style="border: none;" hidden>
+				<img src="ascensionShop.png" alt="Transcend">
+			</button>
 
-            <div id="transcensionShop" >
-                <button id="closeTr" onclick="closeTr()"> ✕ </button>
-                <p id="trBanner">
-                    TRANSCENDENCE SHOP
-                    <br>
-                    <h5> you have unlocked the prestige of prestige </h5>
-                </p>
+			<div id="transcensionShop" hidden>
+				<button id="closeTr" onclick="closeTr()"> ✕ </button>
+				<p id="trBanner">
+					TRANSCENDENCE SHOP
+					<br>
+					<h5> you have unlocked the prestige of prestige </h5>
+				</p>
 
-                <div id="trDisplays">
-                    <p id="trShDisplay">
-                        [ Transcendence Crystals: ]
-                    </p>
-                </div>
+				<div id="trDisplays">
+					<p id="trShDisplay">
+						[ Transcendence Crystals: ]
+					</p>
+				</div>
 
-                <table id="trShop">
-                    <tbody>
-                        <tr id="trHeading">
-                            <th id="trHeadingName"> NAME</th>
-                            <th id="trHeadingCost"> COST</th>
-                            <th id="trHeadingDefi"> </th>
-                            <th id="trHeadingBuy"> BUY</th>
-                        </tr>
-                        <tr id="trAscBoost">
-                            <td id="trABName"> Ascension Shard Boost</td>
-                            <td id="trABCost"> 2 Transcendence Crystals</td>
-                            <td id="trABDefi"> get 2 more shards each ascendence</td>
-                            <td id="trABBuy"><button id="trABBuyButton" onclick="buytrascBoost()"> BUY </button></td>
-                        </tr>
-                        <tr id="trBoost">
-                            <td id="trbName"> Transcendence Crystal Boost</td>
-                            <td id="trbCost"> 20 Transcendence Crystals</td>
-                            <td id="trbDefi"> get 2 more Crystal each Transcendence</td>
-                            <td id="trbBuy"><button id="trboostBuyButton" onclick="buytrBoost()"> BUY </button></td>
-                        </tr>
-                        <tr id="trevent">
-                            <td id="treNamee"> <span id="treName">Transcendence Crystal Rain Event </span></td>
-                            <td id="treCost"> 200 Transcendence Crystals</td>
-                            <td id="treDefi"> Unlock the Transcendence Rain Event! <h5> gives 1 Transcendence Crystal + Ascension Shards per click </h5>
-                            </td>
-                            <td id="treBuy"><button id="trEventBoostButton" onclick="buytrBoost()"> BUY </button></td>
-                        </tr>
-                        <tr id="trDs">
-                            <td id="trDsName"> unlock ??? </td>
-                            <td id="trDsCost"> ??? ascendence shards<br>
-                                ??? Transcendence Crystals 
-                            </td>
-                            <td id="trDsDefi"> a new mechanic... Unlocks at Transcendence 50</td>
-                            <td id="trDsBuy"><button id="trDsBuyButton"> BLOCKED </button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+				<table id="trShop">
+					<tbody>
+						<tr id="trHeading">
+							<th id="trHeadingName"> NAME</th>
+							<th id="trHeadingCost"> COST</th>
+							<th id="trHeadingDefi"> </th>
+							<th id="trHeadingBuy"> BUY</th>
+						</tr>
+						<tr id="trAscBoost">
+							<td id="trABName"> Ascension Shard Boost</td>
+							<td id="trABCost"> 2 Transcendence Crystals</td>
+							<td id="trABDefi"> get 2 more shards each ascendence</td>
+							<td id="trABBuy"><button id="trABBuyButton" onclick="buytrascBoost()"> BUY </button></td>
+						</tr>
+						<tr id="trBoost">
+							<td id="trbName"> Transcendence Crystal Boost</td>
+							<td id="trbCost"> 20 Transcendence Crystals</td>
+							<td id="trbDefi"> get 2 more Crystal each Transcendence</td>
+							<td id="trbBuy"><button id="trboostBuyButton" onclick="buytrBoost()"> BUY </button></td>
+						</tr>
+						<tr id="trevent">
+							<td id="treNamee"> <span id="treName"> Clicker UPGRADE </span></td>
+							<td id="treCost"> 200 Transcendence Crystals</td>
+							<td id="treDefi"> Upgrade the main clicker <h5> gives 1 Transcendence Crystal + Ascension Shards per click </h5></td>
+							<td id="treBuy"><button id="trEventBoostButton" onclick="buyClickerUpg()"> BUY </button></td>
+						</tr>
+						<tr id="trevent">
+							<td id="treNamee"> <span id="treName"> Clicker UPGRADE UPGRADE</span></td>
+							<td id="treCost"> 400 Transcendence Crystals</td>
+							<td id="treDefi"> Upgrade the Upgraded main clicker <h5> gives +1 Transcendence Crystal + +1 Ascension Shards per click </h5></td>
+							<td id="treBuy"><button id="trEventBoostButton" onclick="buyClickerUpgUpg()"> BUY </button></td>
+						</tr>
+						<tr id="trDs">
+							<td id="trDsName"> unlock ??? </td>
+							<td id="trDsCost"> ??? ascendence shards<br>
+								??? Transcendence Crystals 
+							</td>
+							<td id="trDsDefi"> a new mechanic... Unlocks at Transcendence 50</td>
+							<td id="trDsBuy"><button id="trDsBuyButton"> BLOCKED </button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-            <script src="functions.js" defer></script>
-            <script src="main.js" defer> </script>
-            <script src="shopBuy.js" defer> </script>
-            <script src="keyBoard Shortcuts.js" defer></script> 
-            <script>
-                class Level {
-                    constructor(minNum, minAdd, badNum, badAdd, midNum, midAdd, bestNum, bestAdd) {
-                        this.minNum = minNum;
-                        this.badNum = badNum;
-                        this.midNum = midNum;
-                        this.bestNum = bestNum;
-                        this.minAdd = minAdd;
-                        this.midAdd = midAdd;
-                        this.badAdd = badAdd;
-                        this.bestAdd = bestAdd;
-                    }
+			<script src="functions.js" defer></script>
+			<script src="main.js" defer> </script>
+			<script src="shopBuy.js" defer> </script>
+			<script src="keyBoard Shortcuts.js" defer></script> 
+			<script>
+				class Level {
+					constructor(minNum, minAdd, badNum, badAdd, midNum, midAdd, bestNum, bestAdd) {
+						this.minNum = minNum;
+						this.badNum = badNum;
+						this.midNum = midNum;
+						this.bestNum = bestNum;
+						this.minAdd = minAdd;
+						this.midAdd = midAdd;
+						this.badAdd = badAdd;
+						this.bestAdd = bestAdd;
+					}
 
-                    rollLuck(luckNum, luckAdd, minLuck, badLuck, midLuck,) {
-                        luck = Math.floor(Math.random() * (luckNum + luckBoost)) + luckAdd + jackpotBoost;
-                        if (luck <= minLuck) {
-                            num = this.minNum + luck;
-                            addend = this.minAdd;
-                        }
-                        else if (luck <= badLuck) {
-                            num = this.badNum + luck;
-                            addend = this.badAdd;
-                        }
-                        else if (luck <= midLuck) {
-                            num = this.midNum + luck;
-                            addend = this.midAdd;
-                        }
-                        else {
-                            num = this.bestNum + luck;
-                            addend = this.bestAdd;
-                            maxLuckMetersRolled++
-                        }
-                        document.getElementById("display2").textContent = "--[Max luck meters rolled = " + maxLuckMetersRolled + " ]--"
-                        document.getElementById("meterDisplay").textContent = "--[luck meter: " + luck + "! ]--"
-                    }
-                }
+					rollLuck(luckNum, luckAdd, minLuck, badLuck, midLuck,) {
+						luck = Math.floor(Math.random() * (luckNum + luckBoost)) + luckAdd;
+						if (luck <= minLuck) {
+							num = this.minNum + luck;
+							addend = this.minAdd;
+						}
+						else if (luck <= badLuck) {
+							num = this.badNum + luck;
+							addend = this.badAdd;
+						}
+						else if (luck <= midLuck) {
+							num = this.midNum + luck;
+							addend = this.midAdd;
+						}
+						else {
+							num = this.bestNum + luck;
+							addend = this.bestAdd;
+							maxLuckMetersRolled++
+						}
+						document.getElementById("display2").textContent = "--[Max luck meters rolled = " + maxLuckMetersRolled + " ]--"
+						document.getElementById("meterDisplay").textContent = "--[luck meter: " + luck + "! ]--"
+					}
+				}
 
-                let levels = [
-                    new Level(10, 1, 15, 2, 20, 4, 95, 5),
-                    new Level(401, 100, 1000, 501, 2500, 1501, 15000, 10001),
-                    new Level(4001, 1000, 25000, 15001, 50000, 50001, 1750000, 750001),
-                    new Level(40001, 10000, 250000, 150001, 750000, 750001, 100000000, 50000000),
-                    new Level(1000000000, 750000000, 15000000000, 10000000000, 175000000000, 100000000000, 600000000000, 500000000000)
-                ];
-            </script>
-            <script>
-                function fremony() {
-                    ascensionShards++;
-                }
-            </script>
-        </body>
+				let levels = [
+					new Level(10, 1, 15, 2, 20, 4, 95, 5),
+					new Level(401, 100, 1000, 501, 2500, 1501, 15000, 10001),
+					new Level(4001, 1000, 25000, 15001, 50000, 50001, 1750000, 750001),
+					new Level(40001, 10000, 250000, 150001, 750000, 750001, 100000000, 50000000),
+					new Level(1000000000, 750000000, 15000000000, 10000000000, 175000000000, 100000000000, 600000000000, 500000000000)
+				];
+			</script>
+			<script>
+				function fremony() {
+					ascensionShards++;
+				}
 
-    </html>
-<!--</!doctype html>-->
+				function ruinTheFun(){
+					ascensions += 1000000000000000000000000000000;
+					ascensionShards += 1000000000000000000000000000000000;
+					score = BigInt(score);
+					score += 2n**2n**2n**2n**2n; 
+					transcendenceCrystals += 10000000000000000000000000000;
+					upd();
+				}
+			</script>
+		</body>
+	</html>
+<!--</!doctype html>--> 

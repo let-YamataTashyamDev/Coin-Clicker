@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="gem.png">
+    <title>COIN CLICKER</title>
+    <link rel="stylesheet" href="displays.css">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        body{
+            animation: universe 1s infinite ease-in-out;
+        }
+
+        #loginButton{
+            border: none;
+            width: 120px;
+            height: 50px;
+            background-color: rgb(0, 255, 0);
+
+            position: fixed;
+            right: calc(50% - 60px);
+
+            border-radius: 0px;
+            border-color: green;
+
+            color: #fff;
+            font-size: min(20px,2em);
+            overflow: hidden;
+        }
+
+        #loginButton:hover{
+            filter: brightness(1);
+            transform: none;
+            transition: 0s;
+        }
+
+        #loginButton::before{
+            background: none;
+        }
+
+        #login {
+            width: 75vw;
+            background-color: white;
+            position: fixed;
+            right: calc(50% - calc(75vw/2));
+            top: 10px;
+            padding: 10px 18px 100px 18px;
+        }
+
+        #login{
+            justify-content: center;
+        }
+
+        #login::first-line{
+            color: #f00;
+        }
+
+        #logo{
+            color: #ff0;
+        }
+
+        #login {
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>Welcome to <Span id="logo">COIN CLICKER!</Span></h1>
+        <img src="coin1.png" width="64" height="64">
+        <br>
+        <h2> INSTRUCTIONS </h2>
+        <div id="instruuctions">
+            <li> Click the big coin at the center (or just press 'e') </li><br>
+            <li> Press 'a' to open and 's' to close the shop or you can click the open and close buttons </li><br>
+            <li> Press 'w' to open and 'd' to close the ascension shop or just the buttons </li><br>
+            <li> Some stuff is not finished but still HAVE FUN </li><br>
+        </div>
+        <button id="loginButton" onclick="login()">
+            GET ME IN
+        </button>
+    </div>
+
+    <script>
+        function login(){
+            location.href = "clicker.html"; 
+        }
+    </script>
+</body>
+</html>

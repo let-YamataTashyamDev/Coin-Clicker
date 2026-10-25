@@ -16,7 +16,7 @@ function updTr() {
 function openShop() {
     document.getElementById("shopPanel").style.right = "0";
     document.getElementById("shopPanel").classList.remove("reality");
-}
+}   
 
 function openAsShop() {
     document.getElementById("ascendShop").style.right = "calc(50% - 400px)";
@@ -60,7 +60,7 @@ function addLuck() {
 function ascend() {
     if (score >= 1000000000000) {
         numBonus = 1;
-        addBonus = 1;
+        addendBonus = 1;
         ascensions += 1;
         ascensionShards += ascensionShardBoost;
         document.getElementById("imagee").src = "nickel.png";
@@ -77,9 +77,6 @@ function upgAsC() {
         ascensionShards -= 3;
         ascensionShardBoost += 1;
     }
-    else {
-        alert("YOURE TOO BROKE GO AND GET A DAMN JOB INSTEAD OF PLAYING THESE WEB GAAMES YOU FOOL");
-    }
     upd();
 }
 
@@ -87,9 +84,6 @@ function upgLuck() {
     if (ascensionShards > 2) {
         ascensionShards -= 3;
         luckBoost += 1
-    }
-    else {
-        alert("YOURE TOO BROKE GO AND GET A DAMN JOB INSTEAD OF PLAYING THESE WEB GAAMES YOU FOOL");
     }
     upd();
 }
@@ -133,4 +127,31 @@ function buytrBoost(){
         }
         upd();
     }
+}
+
+function buyClickerUpg(){
+    if (clickerUpgradeBought){
+        alert("you already own this upgrade");
+        return;
+    }
+    if (transcendenceCrystals >= 200){
+        transcendenceCrystals -= 200;
+        clickerUpgradeBought = true;
+    }
+}
+
+function buyClickerUpgUpg(){
+    if (clickerUpgradeBought){
+        if (transcendenceCrystals >= 400){
+            transcendenceCrystals -= 400;
+            treventBoost += 10;
+        }
+    } else {
+        alert("you have not purchased Clicker UPG yet");uuu
+    }
+}
+
+function coinUpg(ascShards,trCrystals){
+    ascensionShards += Math.floor(Math.random() * ascShards + treventBoost) + 1;
+    transcendenceCrystals += Math.floor(Math.random() * trCrystals + treventBoost) + 1;
 }

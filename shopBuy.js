@@ -1,10 +1,3 @@
-let idle = false;
-let idleWait = 10000;
-let idleGain = 1000;
-let idleUpg = 10000;
-let purchasedIdle = 0;
-let idleInterval;
-
 class upg {
 	constructor(cost, numGain, addendGain) {
 		this.cost = cost;
